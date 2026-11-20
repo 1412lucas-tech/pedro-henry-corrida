@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#161831">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pedro & Henry">
+  <title>Pedro &amp; Henry: Corrida da Aventura</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><strong>PEDRO <i>&amp;</i> HENRY</strong><div class="header-actions"><span id="offline-ready" role="status" hidden>Pronto para jogar offline</span><button id="sound" type="button" aria-pressed="true">Som ligado</button></div></header>
+    <section class="arena" aria-label="Corrida da Aventura">
+      <canvas id="track" width="960" height="600" aria-label="Pista animada"></canvas>
+      <div id="hud" hidden>
+        <div id="status"></div>
+        <div id="weapon-status" aria-live="polite"></div>
+        <div class="meter"><span id="progress"></span></div>
+      </div>
+      <div id="overlay">
+        <div class="panel">
+          <p id="tag"></p>
+          <h1 id="title"></h1>
+          <p id="message"></p>
+          <div id="actions"></div>
+        </div>
+      </div>
+      <div id="rotate-hint" aria-hidden="true"><strong>Vire o celular</strong><span>O jogo fica melhor na horizontal</span></div>
+    </section>
+    <footer>
+      <p><kbd>↑ ← ↓ →</kbd> ou <kbd>WASD</kbd> Dirigir <kbd>Shift</kbd> Turbo <kbd>Espaço</kbd> Energia <kbd>M</kbd> Míssil <kbd>L</kbd> Laser <kbd>B</kbd> Bomba</p>
+      <div id="touch" hidden aria-label="Controles de toque">
+        <div class="touch-group drive-controls">
+          <button data-key="arrowleft" aria-label="Virar à esquerda">◀</button>
+          <button data-key="arrowup" aria-label="Acelerar">▲</button>
+          <button data-key="arrowright" aria-label="Virar à direita">▶</button>
+        </div>
+        <div class="touch-group action-controls">
+          <button data-key="shift" class="turbo-control">TURBO</button>
+          <button data-action="fire" class="fire-control">DISPARAR</button>
+          <button data-action="swap" class="swap-control">TROCAR</button>
+          <button data-action="pause" class="pause-control" aria-label="Pausar jogo">Ⅱ</button>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
